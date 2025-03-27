@@ -25,9 +25,11 @@ OpenAPI の定義を作成し、`yaml` ファイルとして実装する。
 ## 5. 動作確認
 Gradleで
 Tasks/application/bootRun 実行
-![sample](img/response.pdf)
+
 
 Postman を使用してリクエストを実行し、レスポンスが返り、オブジェクト（`Goods`）が取得できれば成功。
+ex.) http://localhost:8080/v1/anv/common/tasks?user_id=1
+[スクリーンショット 2025-03-27 17.47.32.pdf](https://github.com/user-attachments/files/19482631/2025-03-27.17.47.32.pdf)
 
 
 
