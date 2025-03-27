@@ -1,0 +1,7 @@
+type: object
+properties:
+  id:
+    description: タスクID
+    type: integer
+    format: int32
+    example: 1

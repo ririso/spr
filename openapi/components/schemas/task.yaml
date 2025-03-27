@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    description: タスクID
+    type: integer
+    format: int32
+    example: 1
+  userId:
+    description: ユーザーID
+    type: integer
+    format: int32
+    example: 1
+  taskName:
+    description: タスク名
+    type: string
+    example: 'オードリーはお笑い芸人です！'

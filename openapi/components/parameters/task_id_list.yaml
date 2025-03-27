@@ -1,0 +1,4 @@
+type: integer
+format: int32
+description: タスクID
+example: 1

@@ -1,0 +1,24 @@
+type: object
+properties:
+  error:
+    type: object
+    properties:
+      type:
+        type: string
+        description: エラータイプ
+        example: invalid_parameter
+      message:
+        type: string
+        description: エラーメッセージ
+        example: 不正なパラメータでリクエストされました。
+      detail:
+        type: array
+        items:
+          type: object
+          properties:
+            field:
+              type: string
+              example: user_id
+            invalid_type:
+              type: string
+              example: 必須項目が空

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1533;databaseName=TaskDB;encrypt=false;trustServerCertificate=true
+    username: sa
+    password: Audrey123!
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+server:
+  port: 8080
+  ssl:
+    enabled: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.spr.application.dto
+
+logging:
+  level:
+    org.mybatis: DEBUG

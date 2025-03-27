@@ -1,0 +1,14 @@
+openapi: 3.0.0 # OpenAPIのバージョン
+info:
+  title: ANV Task API # APIの名前
+  description: 参照 # 説明
+  version: "1.0.0" # バージョン
+servers:
+  - url: https://localhost:8080/v1/anv # APIのエンドポイントURL
+paths:
+  /common/tasks/{task_id}:
+    $ref: './components/paths/get-common-task.yaml'
+  /common/tasks:
+    $ref: './components/paths/get-common-tasks.yaml'
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spr.infrastructure.mapper.TasksMapper">
+    <resultMap id="TaskDto" type="com.spr.application.dto.TaskDto">
+        <constructor>
+            <arg column="taskId" javaType="Integer"/>
+            <arg column="userId" javaType="Integer"/>
+            <arg column="taskName" javaType="String"/>
+            <arg column="isDeleted" javaType="Boolean"/>
+        </constructor>
+    </resultMap>
+    <select id="getTask" resultMap="TaskDto">
+        SELECT
+            id AS taskId
+            ,userId AS userId
+            ,taskName AS taskName
+            ,isDeleted AS isDeleted
+        FROM
+            Tasks WITH(NOLOCK)
+        WHERE
+            id = #{taskId}
+    </select>
+
+    <select id="getTasks" resultMap="TaskDto">
+        SELECT
+            id AS taskId
+            ,userId AS userId
+            ,taskName AS taskName
+            ,isDeleted AS isDeleted
+        FROM
+            Tasks WITH(NOLOCK)
+        WHERE
+            userId = #{userId}
+    </select>
+
+</mapper>
