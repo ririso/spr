@@ -30,10 +30,9 @@ Tasks/application/bootRun 実行
 
 Postman を使用してリクエストを実行し、レスポンスが返り、オブジェクト（`Goods`）が取得できれば成功。
 ex.)
- http://localhost:8080/v1/anv/common/tasks?user_id=1
+`http://localhost:8080/v1/anv/common/tasks?user_id=1`
 Taskの場合
 ![sample](https://github.com/user-attachments/assets/62d7b305-d937-4ea6-a5ae-cc6f32939823)
-
 
 
 
