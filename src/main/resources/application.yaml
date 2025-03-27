@@ -17,3 +17,9 @@ mybatis:
 logging:
   level:
     org.mybatis: DEBUG
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs  # OpenAPI仕様書のエンドポイント
+  swagger-ui:
+    path: /swagger-ui.html  # Swagger UIのURLパス
