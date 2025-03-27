@@ -49,3 +49,4 @@ Shift キーを 2 回押すことでファイル検索できます！
 
 
 ## Googleスライド
+https://docs.google.com/presentation/d/13S5mMOB2CYZx1iYkvbrfUTgaLAMhaiP9x2IFLgpWaIw/edit?usp=sharing
