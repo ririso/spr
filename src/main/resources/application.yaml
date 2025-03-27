@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1533;databaseName=TaskDB;encrypt=false;trustServerCertificate=true
+    url: jdbc:sqlserver://localhost:1533;databaseName=anvDB;encrypt=false;trustServerCertificate=true
     username: sa
     password: Audrey123!
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

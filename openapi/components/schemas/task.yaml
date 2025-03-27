@@ -13,4 +13,4 @@ properties:
   taskName:
     description: タスク名
     type: string
-    example: 'オードリーはお笑い芸人です！'
+    example: 'JavaTask'

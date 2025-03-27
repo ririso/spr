@@ -1,8 +1,8 @@
 value:
   tasks:
     - id: 1
-      taskName: 'タスク1'
+      taskName: 'JavaTask'
     - id: 2
-      taskName: 'タスク2'
+      taskName: 'ScalaTask'
     - id: 3
-      taskName: 'タスク3'
+      taskName: 'PythonTask'
