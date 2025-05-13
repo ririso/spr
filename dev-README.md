@@ -1,6 +1,7 @@
 # 作業手順
 
 ## 起動前に下記のコマンドを実行
+※dockerを起動した状態かつプロジェクト配下で下記コマンドを実行する
 **docker compose up**
 
 # 達成すること
@@ -12,14 +13,18 @@
 - [quantity]
 
 ## 1. OpenAPI 定義
-OpenAPI の定義を作成し、`yaml` ファイルを実装する。
+OpenAPI の定義を作成し、`query.yaml` ファイルにエンドポイントを記述する
+responseとparametersのyamlファイルを新規で作成して 参照させる。
+※/common/tasks/{task_id}を参考にする
 
 ## 2. ソースコードの自動生成
+OpenAPI 定義の実装完了後
 `openapi tools` の `openApiGenerate` を使用して、`yaml` ファイルからソースコードを生成する。
 <img width="500px" src="https://github.com/user-attachments/assets/b0404173-0b06-4e4f-850e-9187f0cf3e52">
 
 ### 生成されるファイル
 - `CommonApi.java`(他にも定義したGoods.javaなどができる)
+※もしyamlの定義に変更が合った場合は一度`CommonApi.java`を削除して`openApiGenerate`を再実行する
 
 ## 3. コントローラーの実装
 `CommonApiController` にて、`CommonApi` に実装されたメソッドをオーバーライドする。
