@@ -4,6 +4,7 @@
 **docker compose up**
 
 # 達成すること
+用意されているGoodsテーブルからデータを取得して
 以下のプロパティを持つ`Goods`をレスポンスとして返却すること
 - [userId]
 - [goodsName]
