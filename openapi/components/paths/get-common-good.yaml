@@ -1,0 +1,32 @@
+get:
+  operationId: getGood
+  summary: |
+    商品情報を取得するAPI
+  tags:
+    - common/goods
+  parameters:
+    - in: path
+      name: good_id
+      description: 商品ID
+      required: true
+      schema:
+        $ref: '../parameters/good_id.yaml'
+  responses:
+    200:
+      description: 200 (OK)
+      content:
+        application/json:
+          schema:
+              $ref: '../schemas/good.yaml'
+    400:
+      description: 400 (Bad Request)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/bad_request_response.yaml'
+    500:
+      description: 500 (Internal Server Error)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/internal_server_error_response.yaml'

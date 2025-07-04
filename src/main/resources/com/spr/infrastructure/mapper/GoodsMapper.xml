@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spr.infrastructure.mapper.GoodsMapper">
+    <resultMap id="GoodDto" type="com.spr.application.dto.GoodDto">
+        <constructor>
+            <arg column="goodId" javaType="Integer"/>
+            <arg column="userId" javaType="Integer"/>
+            <arg column="goodsName" javaType="String"/>
+            <arg column="size" javaType="String"/>
+            <arg column="color" javaType="String"/>
+            <arg column="quantity" javaType="Long"/>
+            <arg column="isDeleted" javaType="Boolean"/>
+        </constructor>
+    </resultMap>
+    <select id="getGood" resultMap="GoodDto">
+        SELECT
+            id AS goodId
+            ,userId AS userId
+            ,goodsName AS goodsName
+            ,size AS size
+            ,color AS color
+            ,quantity AS quantity
+            ,isDeleted AS isDeleted
+        FROM
+            Goods WITH(NOLOCK)
+        WHERE
+            id = #{goodsId}
+    </select>
+
+    <select id="getGoods" resultMap="GoodDto">
+        SELECT
+            id AS goodId
+            ,userId AS userId
+            ,goodsName AS goodsName
+            ,size AS size
+            ,color AS color
+            ,quantity AS quantity
+            ,isDeleted AS isDeleted
+        FROM
+            Goods WITH(NOLOCK)
+        WHERE
+            userId = #{userId}
+    </select>
+
+</mapper>

@@ -1,0 +1,8 @@
+value:
+  goods:
+    - id: 1
+      goodsName: 'アルファ米'
+    - id: 2
+      goodsName: '人工衛星工作キット'
+    - id: 3
+      goodsName: 'キーボード'

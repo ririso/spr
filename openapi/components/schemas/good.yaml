@@ -1,0 +1,33 @@
+type: object
+properties:
+  id:
+    description: 商品ID
+    type: integer
+    format: int32
+    example: 1
+  userId:
+    description: 登録者ID
+    type: integer
+    format: int32
+    example: 1
+  goodsName:
+    description: 商品名
+    type: string
+    example: '人工衛星おためし作成キット'
+  size:
+    description: サイズ
+    type: string
+    example: '2000×2000×4000(mm)'
+  color:
+    description: 色
+    type: string
+    example: '黄色'
+  quantity:
+    description: 数量
+    type: integer
+    format: int64
+    example: 1
+  isDeleted:
+    description: 削除フラグ
+    type: boolean
+    example: True

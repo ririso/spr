@@ -1,0 +1,6 @@
+type: object
+properties:
+  goods:
+    type: array
+    items:
+      $ref: '../schemas/good.yaml'

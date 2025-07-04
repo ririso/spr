@@ -1,0 +1,36 @@
+get:
+  operationId: getGoods
+  summary: |
+    ユーザーIDに紐づく商品一覧を取得するAPI
+  tags:
+    - common/goods
+  parameters:
+    - in: query
+      name: user_id
+      description: ユーザーID
+      required: true
+      schema:
+        format: int32
+        type: integer
+  responses:
+    200:
+      description: 200 (OK)
+      content:
+        application/json:
+          examples:
+            複数の商品をレスポンスする:
+              $ref: '../examples/get-common-goods-response.yaml'
+          schema:
+            $ref: '../responses/get-common-goods-response.yaml'
+    400:
+      description: 400 (Bad Request)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/bad_request_response.yaml'
+    500:
+      description: 500 (Internal Server Error)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/internal_server_error_response.yaml'
