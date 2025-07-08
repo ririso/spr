@@ -1,8 +1,6 @@
 package com.spr.application.usecase;
 
-import com.spr.application.dto.TaskDto;
 import com.spr.application.dto.UserDto;
-import com.spr.infrastructure.TasksQueryDataSource;
 import com.spr.infrastructure.UsersQueryDataSource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
