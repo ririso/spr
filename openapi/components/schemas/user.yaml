@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    description: ユーザーID
+    type: integer
+    format: int32
+    example: 1
+  userName:
+    description:
+    type: string
+    example: 'johnny_joestar'
+  age:
+    description: 年齢
+    type: integer
+    format: int32
+    example: 20
+  team:
+    description: 所属チーム名
+    type: string
+    example: 'development'

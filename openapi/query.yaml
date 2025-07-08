@@ -10,8 +10,7 @@ paths:
     $ref: './components/paths/get-common-task.yaml'
   /common/tasks:
     $ref: './components/paths/get-common-tasks.yaml'
-#    TODO これを実装してもらう！
-#  /common/goods/{goods_id}:
-#    $ref: './components/paths/get-common-goods.yaml'
+  /common/users/{user_id}:
+    $ref: './components/paths/get-common-user.yaml'
 
 

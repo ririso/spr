@@ -1,0 +1,32 @@
+get:
+  operationId: getUser
+  summary: |
+    ユーザーを取得するAPI
+  tags:
+    - common/user
+  parameters:
+    - in: path
+      name: user_id
+      description: ユーザーID
+      required: true
+      schema:
+        $ref: '../parameters/user_id.yaml'
+  responses:
+    200:
+      description: 200 (OK)
+      content:
+        application/json:
+          schema:
+              $ref: '../schemas/user.yaml'
+    400:
+      description: 400 (Bad Request)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/bad_request_response.yaml'
+    500:
+      description: 500 (Internal Server Error)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/internal_server_error_response.yaml'

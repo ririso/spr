@@ -3,8 +3,10 @@ package com.spr.presentation;
 
 import com.spr.application.usecase.GetTaskUseCase;
 import com.spr.application.usecase.GetTasksUseCase;
+import com.spr.application.usecase.GetUserUseCase;
 import com.spr.generated.model.GetCommonTasksResponse;
 import com.spr.generated.model.Task;
+import com.spr.generated.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommonApiController implements CommonApi {
     private final GetTasksUseCase getTasksUseCase;
     private final GetTaskUseCase getTaskUseCase;
+    private final GetUserUseCase getUserUseCase;
+
 
 
     @Override
@@ -44,6 +48,9 @@ public class CommonApiController implements CommonApi {
         return ResponseEntity.ok(new GetCommonTasksResponse(taskResponseList));
     }
 
-
-
+    @Override
+    public ResponseEntity<User> getUser(Integer userId) {
+        final var user = getUserUseCase.execute(userId);
+        return ResponseEntity.ok(new User(user.userId(), user.age(), user.team()));
+    }
 }
