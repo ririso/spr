@@ -6,6 +6,7 @@
     <resultMap id="UserDto" type="com.spr.application.dto.UserDto">
         <constructor>
             <arg column="userId" javaType="Integer"/>
+            <arg column="userName" javaType="String"/>
             <arg column="age" javaType="Integer"/>
             <arg column="isDeleted" javaType="Boolean"/>
             <arg column="team" javaType="String"/>
@@ -14,6 +15,7 @@
     <select id="getUser" resultMap="UserDto">
         SELECT
             userId AS userId
+            ,userName AS userName
             ,age AS age
             ,isDeleted AS isDeleted
             ,team AS team

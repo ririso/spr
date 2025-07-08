@@ -51,6 +51,6 @@ public class CommonApiController implements CommonApi {
     @Override
     public ResponseEntity<User> getUser(Integer userId) {
         final var user = getUserUseCase.execute(userId);
-        return ResponseEntity.ok(new User(user.userId(), user.age(), user.team()));
+        return ResponseEntity.ok(new User(user.userId(), user.userName(), user.age(), user.team()));
     }
 }
