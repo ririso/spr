@@ -1,16 +1,16 @@
 package com.spr.presentation;
 
 
+import com.spr.application.usecase.GetGoodsUseCase;
 import com.spr.application.usecase.GetTaskUseCase;
 import com.spr.application.usecase.GetTasksUseCase;
-import com.spr.application.usecase.GetGoodUseCase;
-import com.spr.application.usecase.GetGoodsUseCase;
-import com.spr.generated.model.GetCommonGoodsResponse;
+import com.spr.application.usecase.GetUserUseCase;
 import com.spr.generated.model.GetCommonTasksResponse;
 import com.spr.generated.model.Task;
-import com.spr.generated.model.Good;
+import com.spr.generated.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommonApiController implements CommonApi {
     private final GetTasksUseCase getTasksUseCase;
     private final GetTaskUseCase getTaskUseCase;
-    private final GetGoodUseCase getGoodUseCase;
+    private final GetUserUseCase getUserUseCase;
     private final GetGoodsUseCase getGoodsUseCase;
 
     @Override
@@ -50,19 +50,8 @@ public class CommonApiController implements CommonApi {
     }
 
     @Override
-    public ResponseEntity<Good> getGood(Integer goodId) {
-        final var good = getGoodUseCase.execute(goodId);
-        return ResponseEntity.ok(new Good(good.goodId(), good.userId(), good.goodsName(), good.color(), good.size(), good.quantity(), good.isDeleted()));
+    public ResponseEntity<User> getUser(Integer userId) {
+        final var user = getUserUseCase.execute(userId);
+        return ResponseEntity.ok(new User(user.userId(), user.userName(), user.age(), user.team()));
     }
-    @Override
-    public ResponseEntity<GetCommonGoodsResponse> getGoods(Integer userId) {
-
-        final var goodsList = getGoodsUseCase.execute(userId);
-
-        final var goodResponseList = goodsList.stream()
-                .map(x -> new Good(x.goodId(), x.userId(),x.goodsName(),x.size(),x.color(),x.quantity(),x.isDeleted()))
-                .toList();
-        return ResponseEntity.ok(new GetCommonGoodsResponse(goodResponseList));
-    }
-
 }

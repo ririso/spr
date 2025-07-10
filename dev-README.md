@@ -5,25 +5,39 @@
 **docker compose up**
 
 # 達成すること
-以下のプロパティを持つ`Goods`をレスポンスとして返却すること
+APIを二つ作成する
+1つ目は単一の`User`をレスポンスとして返却するAPI
+2つ目は複数の`User`をレスポンスとして返却するAPI
+※いずれも`User`は以下のプロパティを返す
+
 - [userId]
-- [goodsName]
-- [size]
-- [color]
-- [quantity]
+- [userName]
+- [age]
+- [department]
 
 ## 1. OpenAPI 定義
-OpenAPI の定義を作成し、`query.yaml` ファイルにエンドポイントを記述する
+定義を作成し、`query.yaml` ファイルにエンドポイントを記述する。
+
+まずは`query.yaml`に指定のエンドポイントを定義する。
+
+
+
 responseとparametersのyamlファイルを新規で作成して 参照させる。
 ※/common/tasks/{task_id}を参考にする
 
 ## 2. ソースコードの自動生成
 OpenAPI 定義の実装完了後
+画面右側のGradleタブから
 `openapi tools` の `openApiGenerate` を使用して、`yaml` ファイルからソースコードを生成する。
+例)Taskを生成する場合
+1.Task.yamlを定義するとTask.javaが自動生成される
+Task.yaml →　java/com/spr/generated/model/Task.java
+
+
 <img width="500px" src="https://github.com/user-attachments/assets/b0404173-0b06-4e4f-850e-9187f0cf3e52">
 
 ### 生成されるファイル
-- `CommonApi.java`(他にも定義したGoods.javaなどができる)
+- `CommonApi.java`(他にも定義したUser.javaなどができる)
 ※もしyamlの定義に変更が合った場合は一度`CommonApi.java`を削除して`openApiGenerate`を再実行する
 
 ## 3. コントローラーの実装
@@ -44,7 +58,7 @@ Gradleで
 Tasks/application/bootRun 実行
 
 
-Postman を使用してリクエストを実行し、レスポンスが返り、オブジェクト（`Goods`）が取得できれば成功。
+Postman を使用してリクエストを実行し、レスポンスが返り、オブジェクト（`User`）が取得できれば成功。
 ex.)Taskの場合
  `http://localhost:8080/v1/anv/common/tasks?user_id=1`
 ![sample](https://github.com/user-attachments/assets/62d7b305-d937-4ea6-a5ae-cc6f32939823)

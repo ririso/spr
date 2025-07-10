@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spr.infrastructure.mapper.UsersMapper">
+    <resultMap id="UserDto" type="com.spr.application.dto.UserDto">
+        <constructor>
+            <arg column="userId" javaType="Integer"/>
+            <arg column="userName" javaType="String"/>
+            <arg column="age" javaType="Integer"/>
+            <arg column="isDeleted" javaType="Boolean"/>
+            <arg column="team" javaType="String"/>
+        </constructor>
+    </resultMap>
+    <select id="getUser" resultMap="UserDto">
+        SELECT
+            userId AS userId
+            ,userName AS userName
+            ,age AS age
+            ,isDeleted AS isDeleted
+            ,team AS team
+        FROM
+            Users WITH(NOLOCK)
+        WHERE
+            userId = #{userId}
+    </select>
+
+</mapper>
