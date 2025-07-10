@@ -3,10 +3,6 @@ package com.spr.presentation;
 
 import com.spr.application.usecase.GetTaskUseCase;
 import com.spr.application.usecase.GetTasksUseCase;
-import com.spr.application.usecase.GetUserUseCase;
-import com.spr.generated.model.GetCommonTasksResponse;
-import com.spr.generated.model.Task;
-import com.spr.generated.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +15,6 @@ public class CommonApiController implements CommonApi {
     private final GetTasksUseCase getTasksUseCase;
     private final GetTaskUseCase getTaskUseCase;
     private final GetUserUseCase getUserUseCase;
-
-
 
     @Override
     public ResponseEntity<Task> getTask(Integer taskId) {
@@ -52,5 +46,20 @@ public class CommonApiController implements CommonApi {
     public ResponseEntity<User> getUser(Integer userId) {
         final var user = getUserUseCase.execute(userId);
         return ResponseEntity.ok(new User(user.userId(), user.userName(), user.age(), user.team()));
+    }
+
+    public ResponseEntity<Good> getGood(Integer goodId) {
+        final var good = getGoodUseCase.execute(goodId);
+        return ResponseEntity.ok(new Good(good.goodId(), good.userId(), good.goodsName(), good.color(), good.size(), good.quantity(), good.isDeleted()));
+    }
+    @Override
+    public ResponseEntity<GetCommonGoodsResponse> getGoods(Integer userId) {
+
+        final var goodsList = getGoodsUseCase.execute(userId);
+
+        final var goodResponseList = goodsList.stream()
+                .map(x -> new Good(x.goodId(), x.userId(),x.goodsName(),x.size(),x.color(),x.quantity(),x.isDeleted()))
+                .toList();
+        return ResponseEntity.ok(new GetCommonGoodsResponse(goodResponseList));
     }
 }
