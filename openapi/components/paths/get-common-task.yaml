@@ -1,17 +1,17 @@
 get:
-  operationId: getTask
-  summary: |
+  operationId: getTask # operationIdがコントローラーのメソッド名になる
+  summary: # 説明
     タスクを取得するAPI
   tags:
     - common/tasks
-  parameters:
+  parameters: # パラメータの説明
     - in: path
       name: task_id
       description: タスクID
       required: true
       schema:
         $ref: '../parameters/task_id.yaml'
-  responses:
+  responses: # レスポンスの説明
     200:
       description: 200 (OK)
       content:

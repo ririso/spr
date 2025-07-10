@@ -6,8 +6,8 @@ info:
 servers:
   - url: https://localhost:8080/v1/anv # APIのエンドポイントURL
 paths:
-  /common/tasks/{task_id}:
-    $ref: './components/paths/get-common-task.yaml'
+  /common/tasks/{task_id}: # エンドポイントを記述する
+    $ref: './components/paths/get-common-task.yaml' # ここにAPIの中身を記載する
   /common/tasks:
     $ref: './components/paths/get-common-tasks.yaml'
   /common/users/{user_id}:

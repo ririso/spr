@@ -16,13 +16,24 @@ APIを二つ作成する
 - [department]
 
 ## 1. OpenAPI 定義
-OpenAPI の定義を作成し、`query.yaml` ファイルにエンドポイントを記述する
+定義を作成し、`query.yaml` ファイルにエンドポイントを記述する。
+
+まずは`query.yaml`に指定のエンドポイントを定義する。
+
+
+
 responseとparametersのyamlファイルを新規で作成して 参照させる。
 ※/common/tasks/{task_id}を参考にする
 
 ## 2. ソースコードの自動生成
 OpenAPI 定義の実装完了後
+画面右側のGradleタブから
 `openapi tools` の `openApiGenerate` を使用して、`yaml` ファイルからソースコードを生成する。
+例)Taskを生成する場合
+1.Task.yamlを定義するとTask.javaが自動生成される
+Task.yaml →　java/com/spr/generated/model/Task.java
+
+
 <img width="500px" src="https://github.com/user-attachments/assets/b0404173-0b06-4e4f-850e-9187f0cf3e52">
 
 ### 生成されるファイル
