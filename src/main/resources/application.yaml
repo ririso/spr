@@ -11,7 +11,7 @@ server:
     enabled: false
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:com/spr/infrastructure/mapper/*.xml
   type-aliases-package: com.spr.application.dto
 
 logging:
