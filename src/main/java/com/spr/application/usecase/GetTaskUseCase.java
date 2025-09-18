@@ -11,7 +11,6 @@ public class GetTaskUseCase {
     private final TasksQueryDataSource tasksQueryDataSource;
 
     public TaskDto execute(Integer taskId) {
-        System.out.println("GetTaskUseCase");
         return tasksQueryDataSource.getTask(taskId);
     }
 }
