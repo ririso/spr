@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1533;databaseName=anvDB;encrypt=false;trustServerCertificate=true
+    username: sa
+    password: Audrey123!
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+mybatis:
+  mapper-locations: classpath:com/spr/infrastructure/mapper/*.xml
+  type-aliases-package: com.spr.application.dto
+
+logging:
+  level:
+    org.mybatis: DEBUG
