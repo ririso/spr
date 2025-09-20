@@ -1,0 +1,11 @@
+README.md
+com/spr/generated/model/BadRequestResponse.java
+com/spr/generated/model/BadRequestResponseError.java
+com/spr/generated/model/BadRequestResponseErrorDetailInner.java
+com/spr/generated/model/GetCommonTasksResponse.java
+com/spr/generated/model/InternalServerErrorResponse.java
+com/spr/generated/model/InternalServerErrorResponseError.java
+com/spr/generated/model/Task.java
+com/spr/presentation/ApiUtil.java
+com/spr/presentation/CommonApi.java
+pom.xml

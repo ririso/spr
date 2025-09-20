@@ -26,7 +26,7 @@
         FROM
             Goods WITH(NOLOCK)
         WHERE
-            id = #{goodsId}
+            id = #{goodId}
     </select>
 
     <select id="getGoods" resultMap="GoodDto">
@@ -42,6 +42,7 @@
             Goods WITH(NOLOCK)
         WHERE
             userId = #{userId}
+            AND isDeleted = 0
     </select>
 
 </mapper>

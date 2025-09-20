@@ -33,6 +33,7 @@
             Tasks WITH(NOLOCK)
         WHERE
             userId = #{userId}
+            AND isDeleted = 0
     </select>
 
 </mapper>

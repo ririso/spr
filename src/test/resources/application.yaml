@@ -5,11 +5,6 @@ spring:
     password: Audrey123!
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
-server:
-  port: 8080
-  ssl:
-    enabled: false
-
 mybatis:
   mapper-locations: classpath:com/spr/infrastructure/mapper/*.xml
   type-aliases-package: com.spr.application.dto
@@ -17,9 +12,3 @@ mybatis:
 logging:
   level:
     org.mybatis: DEBUG
-
-springdoc:
-  api-docs:
-    path: /v3/api-docs  # OpenAPI仕様書のエンドポイント
-  swagger-ui:
-    path: /swagger-ui.html  # Swagger UIのURLパス

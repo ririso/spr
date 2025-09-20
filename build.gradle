@@ -77,7 +77,10 @@ openApiGenerate {
 
 sourceSets {
 	main {
-		resources.srcDirs = ["src/main/resources"]
+		resources.srcDirs = ["src/main/resources", "src/main/java"]
+	}
+	test {
+		resources.srcDirs = ["src/test/resources", "src/main/java"]
 	}
 }
 
